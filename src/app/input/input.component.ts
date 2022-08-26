@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
+  public content:string = ""
+  getInput(){
+    console.log(this.content);
+  }
+
   constructor() { }
 
   ngOnInit(): void {
