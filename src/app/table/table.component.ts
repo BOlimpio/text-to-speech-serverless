@@ -27,6 +27,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
+  public content:string = ""
+  getInput(){
+    console.log(this.content);
+  }
   displayedColumns: string[] = ['id', 'voice', 'content', 'status', 'player'];
   dataSource = ELEMENT_DATA;
 }

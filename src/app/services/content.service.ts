@@ -13,13 +13,13 @@ export class ContentService {
 
   constructor(private http: HttpClient) { }
 
-  postConvertText(text:ConvertText): Observable<any> {
+  postConvertText(text:ConvertText): Observable<ConvertText> {
     const body=JSON.stringify(text);
     const headers = { 'content-type': 'application/json'}  
     return this.http.post<any>(this.baseUrl, body, {'headers':headers})
   }
 
-  getAudios(text:ConvertText): Observable<ConvertText> {
-    return this.http.get<ConvertText>(this.baseUrl + '?' + text.id)
+  getAudios(id:string): Observable<string> {
+    return this.http.get<string>(this.baseUrl + '?' + id)
   }
 }

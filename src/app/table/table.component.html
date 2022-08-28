@@ -1,3 +1,13 @@
+<form class="example-form">
+  <h3><br>Search your audios:</h3>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>ID</mat-label>
+    <input (change)="getInput()" [(ngModel)]="content" name="content" matInput #message maxlength="40" placeholder="Ex. Use * para trazer todos os audios">
+    <mat-hint align="end">{{message.value.length}} / 40</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button color="primary" id="convert">Search</button>
+</form>
+<br>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
