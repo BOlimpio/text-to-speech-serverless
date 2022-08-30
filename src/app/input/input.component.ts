@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ConvertText } from '../model/convert-text.model';
 import { ContentService } from '../services/content.service'
 
-interface Speaker {
-  value: string;
-  viewValue: string;
-}
+// interface Speaker {
+//   value: string;
+//   viewValue: string;
+// }
 
 @Component({
   selector: 'app-input',
@@ -14,16 +14,16 @@ interface Speaker {
 })
 export class InputComponent implements OnInit {
 
-  speakers: Speaker[] = [
-    {value: 'Joanna', viewValue: 'Joanna [English]'},
-    {value: 'Cristiano', viewValue: 'Cristiano [Portuquese]'},
-    {value: 'Mizuki', viewValue: 'Mizuki [Japanese]'},
-    {value: 'Carla', viewValue: 'Carla [Italian]'},
+  speakers: ConvertText[] = [
+    {voice: 'Joanna [English]',text: "",id: ""},
+    {voice: 'Cristiano [Portuquese]',text:"",id:""},
+    {voice: 'Mizuki [Japanese]',text:"",id:""},
+    {voice: 'Carla [Italian]',text:"",id:""},
   ];
 
-  selectedSpeaker = this.speakers[1].value;
+  // selectedSpeaker = this.speakers[1].voice;
 
-  public content:string = ""
+  content = new ConvertText(this.speakers[1].voice,"","");
   getInput(){
     console.log(this.content);
   }
