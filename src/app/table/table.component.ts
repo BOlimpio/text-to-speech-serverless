@@ -33,4 +33,5 @@ export class TableComponent {
   }
   displayedColumns: string[] = ['id', 'voice', 'content', 'status', 'player'];
   dataSource = ELEMENT_DATA;
+  // validate what the lambda function returns to populate the table
 }
