@@ -9,7 +9,7 @@ import { ConvertText } from '../model/convert-text.model';
 })
 export class ContentService {
 
-  baseUrl = environment.api_gateway
+  baseUrl = "https://brg8r3wbsl.execute-api.us-east-1.amazonaws.com/poc_stage"
 
   constructor(private http: HttpClient) { }
 
