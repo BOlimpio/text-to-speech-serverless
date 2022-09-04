@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
+import { ContentService } from '../services/content.service'
 
-export interface PeriodicElement {
+export interface tableContent {
   id: number;
   voice: string;
   content: string;
@@ -8,7 +9,7 @@ export interface PeriodicElement {
   player: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: tableContent[] = [
   // {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   // {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   // {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -31,7 +32,16 @@ export class TableComponent {
   getInput(){
     console.log(this.content);
   }
+  
+  constructor(
+    private contentService: ContentService
+  ) { }
+
   displayedColumns: string[] = ['id', 'voice', 'content', 'status', 'player'];
   dataSource = ELEMENT_DATA;
   // validate what the lambda function returns to populate the table
+
+  getAudio (id:string){
+    this.contentService.getAudios(id).subscribe(resultado => {console.log(resultado)})
+  }
 }

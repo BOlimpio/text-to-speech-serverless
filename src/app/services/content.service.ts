@@ -13,17 +13,17 @@ export class ContentService {
 
   constructor(private http: HttpClient) { }
 
-  postConvertText(text:ConvertText): Observable<any> {
+  postConvertText(text:ConvertText){
     var inputData = {
       "voice": text.voice,
       "text" : text.text
-    }
+    };
     const body=JSON.stringify(inputData);
     const headers = { 'content-type': 'application/json'}  
-    return this.http.post<any>(this.baseUrl, body, {'headers':headers})
+    return this.http.post(this.baseUrl, body, {'headers':headers})
   }
 
-  getAudios(id:string): Observable<any> {
-    return this.http.get<any>(this.baseUrl + '?' + id)
+  getAudios(id:string){
+    return this.http.get(this.baseUrl + '?postId=' + id)
   }
 }

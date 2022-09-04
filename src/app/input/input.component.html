@@ -4,7 +4,7 @@
     <mat-label>Your speaker</mat-label>
     <mat-select [(ngModel)]="content.voice" name="voice">
       <mat-option></mat-option>
-      <mat-option [value]="option.voice" *ngFor="let option of speakers">{{ option.voice}}</mat-option>
+      <mat-option [value]="option.text" *ngFor="let option of speakers">{{ option.voice}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">

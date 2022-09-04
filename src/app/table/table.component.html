@@ -5,7 +5,7 @@
     <input (change)="getInput()" [(ngModel)]="content" name="content" matInput #message maxlength="40" placeholder="Ex. Use * para trazer todos os audios">
     <mat-hint align="end">{{message.value.length}} / 40</mat-hint>
   </mat-form-field>
-  <button mat-raised-button color="primary" id="convert">Search</button>
+  <button mat-raised-button color="primary" id="convert" (click)="getAudio(content)" >Search</button>
 </form>
 <br>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

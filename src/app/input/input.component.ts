@@ -15,13 +15,11 @@ import { ContentService } from '../services/content.service'
 export class InputComponent implements OnInit {
 
   speakers: ConvertText[] = [
-    {voice: 'Joanna [English]',text: "",id: ""},
-    {voice: 'Cristiano [Portuquese]',text:"",id:""},
-    {voice: 'Mizuki [Japanese]',text:"",id:""},
-    {voice: 'Carla [Italian]',text:"",id:""},
+    {voice: 'Joanna [English]',text: "Joanna",id: ""},
+    {voice: 'Cristiano [Portuquese]',text:"Cristiano",id:""},
+    {voice: 'Mizuki [Japanese]',text:"Mizuki",id:""},
+    {voice: 'Carla [Italian]',text:"Carla",id:""},
   ];
-
-  // selectedSpeaker = this.speakers[1].voice;
 
   content = new ConvertText(this.speakers[1].voice,"","");
   getInput(){
@@ -36,8 +34,7 @@ export class InputComponent implements OnInit {
   }
 
   convertToAudio (convertText:ConvertText){
-    var response = this.contentService.postConvertText(convertText)
-    console.log(response)
+    var response = this.contentService.postConvertText(convertText).subscribe(resultado => {console.log(resultado)})
   }
 
 }
