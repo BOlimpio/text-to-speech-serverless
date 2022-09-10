@@ -9,7 +9,7 @@ import { TableContent } from '../model/table-content.model';
 })
 export class ContentService {
 
-  baseUrl = "https://brg8r3wbsl.execute-api.us-east-1.amazonaws.com/poc_stage"
+  baseUrl = "URL_API_GATEWAY"
 
   constructor(private http: HttpClient) { }
 
