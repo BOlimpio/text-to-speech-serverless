@@ -37,6 +37,7 @@ export class InputComponent implements OnInit {
 
   convertToAudio (convertText:ConvertText){
     this.contentService.postConvertText(convertText).subscribe(resultado => this.response = resultado.toString())
+    this.content = {voice:convertText.voice,text:"",id:""}
   }
 
 }

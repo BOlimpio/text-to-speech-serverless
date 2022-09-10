@@ -14,3 +14,10 @@ table {
 h3 {
   font-size: 24px;
 }
+
+
+.label-do-lado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 2rem;
+}
