@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { ConvertText } from '../model/convert-text.model';
+import { TableContent } from '../model/table-content.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,6 @@ export class ContentService {
   }
 
   getAudios(id:string){
-    return this.http.get(this.baseUrl + '?postId=' + id)
+    return this.http.get<TableContent[]>(this.baseUrl + '?postId=' + id)
   }
 }

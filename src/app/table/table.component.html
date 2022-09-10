@@ -27,7 +27,7 @@
     <!-- Weight Content -->
     <ng-container matColumnDef="content">
       <th mat-header-cell *matHeaderCellDef> Content </th>
-      <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.text}} </td>
     </ng-container>
   
     <!-- Symbol Status -->
@@ -39,7 +39,7 @@
     <!-- Symbol Player -->
     <ng-container matColumnDef="player">
       <th mat-header-cell *matHeaderCellDef> Player </th>
-      <td mat-cell *matCellDef="let element"> {{element.player}} </td>
+      <td mat-cell *matCellDef="let element"><audio controls><source src= {{element.url}} type='audio/mpeg'></audio></td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

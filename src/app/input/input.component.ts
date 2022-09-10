@@ -14,6 +14,8 @@ import { ContentService } from '../services/content.service'
 })
 export class InputComponent implements OnInit {
 
+  response? : string
+
   speakers: ConvertText[] = [
     {voice: 'Joanna [English]',text: "Joanna",id: ""},
     {voice: 'Cristiano [Portuquese]',text:"Cristiano",id:""},
@@ -34,7 +36,7 @@ export class InputComponent implements OnInit {
   }
 
   convertToAudio (convertText:ConvertText){
-    var response = this.contentService.postConvertText(convertText).subscribe(resultado => {console.log(resultado)})
+    this.contentService.postConvertText(convertText).subscribe(resultado => this.response = resultado.toString())
   }
 
 }
