@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ConvertText } from '../model/convert-text.model';
 import { TableContent } from '../model/table-content.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
-  baseUrl = "URL_API_GATEWAY"
+  baseUrl = environment.apigateway //URL_API_GATEWAY 
 
   constructor(private http: HttpClient) { }
 

@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
+  apigateway: "https://brg8r3wbsl.execute-api.us-east-1.amazonaws.com/poc_stage",
   cognito: {
-    userPoolId: 'us-east-1_H13NqSGTM',
-    userPoolWebClientId: 'k5gpugghhq3p6quf9vmujlmrs',
+    userPoolId: 'us-east-1_JmascBYVG',
+    userPoolWebClientId: '7nckhvvt90tdtn5lrg9r6i08tj',
   },
 };
 
