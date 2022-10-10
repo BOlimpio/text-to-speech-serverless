@@ -1,10 +1,18 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-    <span class="material-icons md-36">
-      record_voice_over
-      </span>
-    <span>{{title}}</span>
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <span>
+    <button mat-button routerLink="/"><mat-icon>record_voice_over</mat-icon></button>
+    <button mat-button routerLink="/">{{title}}</button>
+  </span>
+  <span class="example-spacer"></span>
+  <div class="" fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button *ngIf="usuarioEstaAutenticado" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
   </div>
+</mat-toolbar>
+
   
   <div class="content" role="main">
   

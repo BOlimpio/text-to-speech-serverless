@@ -1,0 +1,57 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="./../../assets/text-to-speech-register.png" class="img-fluid" alt="Sample image" />
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" *ngIf="!isConfirm">
+          <form>
+            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+              Registre-se
+            </p>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" placeholder="E-mail"
+                class="form-control form-control-lg" />
+            </div>
+  
+            <!-- Password input -->
+            <div class="input-group input-group-me mb-3">
+              <input [type]="user.showPassword ? 'text' : 'password'" id="password" name="password" placeholder="Senha"
+                #password="ngModel" [(ngModel)]="user.password" class="form-control form-control-lg" />
+              <button type="button" class="btn btn-outline-secondary" (click)="user.showPassword = !user.showPassword">
+                <i class="bi" [ngClass]="{
+                            'bi-eye-fill': !user.showPassword,
+                            'bi-eye-slash-fill': user.showPassword
+                          }"></i>
+              </button>
+            </div>
+            <div class="text-center text-me-start mt-2 pt-2">
+              <button type="button" (click)="validarSenha(user.password)" class="btn btn-primary btn-lg">
+                Registrar
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" *ngIf="isConfirm">
+          <form>
+            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+              Código de confirmação
+            </p>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="code" name="code" #code="ngModel" [(ngModel)]="user.code"
+              placeholder="Código enviado ao e-mail cadastrado"
+                class="form-control form-control-lg" />
+            </div>
+  
+            <div class="text-center text-me-start mt-2 pt-2">
+              <button type="button" (click)="confirmSignUp()" class="btn btn-primary btn-lg">
+                Confirmar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

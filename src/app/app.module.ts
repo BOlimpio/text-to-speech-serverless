@@ -16,6 +16,10 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CognitoService } from './services/cognito.service';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { CognitoService } from './services/cognito.service';
     TableComponent,
     InputComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CadastroComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,10 @@ import { CognitoService } from './services/cognito.service';
     FormsModule,
     HttpClientModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     CognitoService,
