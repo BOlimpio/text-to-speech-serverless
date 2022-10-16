@@ -35,11 +35,11 @@
   </span>
   <span class="example-spacer"></span>
   <div class="" fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/login" *ngIf="!usuarioEstaAutenticado">
+    <button mat-button routerLink="/login" *ngIf="!usuarioEstaAutenticado()">
       <mat-icon>power_settings_new</mat-icon>
       Login
     </button>
-    <button mat-button *ngIf="usuarioEstaAutenticado" (click)="logout()">
+    <button mat-button *ngIf="usuarioEstaAutenticado()" (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>

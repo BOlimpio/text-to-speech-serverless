@@ -50,7 +50,9 @@ export class CognitoService {
     return Auth.signOut()
     .then(() => {
       this.authenticationSubject.next(false);
+      this.usuarioAutenticado = false;
     });
+    
   }
 
   public isAuthenticated(): Promise<boolean> {
